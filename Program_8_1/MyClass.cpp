@@ -15,6 +15,13 @@ class MyClass{
     int binarySearch(int array[], int numelems, int value);
     void printSearch(int rslt);
     void Results(int array[], int numelems, int value);
+    const double getPi(){
+        return pi;
+    }
+    
+    private:
+    const double pi = 3.14; // constant value of pi
+    
 };
 
 /** The binarySearch fucntion performs a binary search on an
@@ -38,18 +45,20 @@ int MyClass::binarySearch(int array[], int numelems, int value){
             last = middle - 1;
         else
             first = middle + 1;             // If value is in upper half
-        
     }
     return position;
 }
 void MyClass::printSearch(int rslt){
     
-    if (rslt == -1)
+    if (rslt == -1){
+        cout << "We are inside myClass" << endl;
         cout << "You did not earn 100 points on any test" << endl;
+    }
     else
     {
         // Otherwise results contains the subscript of
         // the first 100 found in the array.
+        cout << "We are inside myClass" << endl;
         cout << "You earned 100 points on test ";
         cout << (rslt + 1) << endl;
     }

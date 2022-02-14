@@ -11,7 +11,6 @@ using namespace std;
 
 // Function prototype
 int searchList(int list[], int numElems, int value);
-int searchList(int list[], int numElems, int value);
 void arrayPrint();
 void swap(int *xp, int *yp);
 void bubblesort(int arr[], int size); // needs some work. It may not work
@@ -36,8 +35,9 @@ int main(int argc, const char * argv[]) {
         cout << "You earned 100 points on test ";
         cout << (results + 1) << endl;
     }
-    classObject.Results(tests, SIZE, 82);
     arrayPrint();
+    classObject.Results(tests, SIZE, 82);
+    cout << "Value of pie: " << classObject.getPi() << endl;
     return 0;
 }
 
@@ -59,32 +59,6 @@ int searchList(int list[], int numElems, int value){
     return position;                    // Return the position, or -1
 }
 
-// The binarySearch fucntion performs a binary search on an
-// integer array.
-
-int binarySearch(int array[], int numelems, int value){
-    
-    int first = 0,                  // First array element
-        last = numelems - 1,        // Last array element
-        middle,                     // Mid point of search
-        position = -1;              // Position of search value
-    bool found = false;             // Flag
-    
-    while (!found && first <= last){
-        middle = (first + last)/2;  // Calculate mid pint
-        if (array[middle] == value) // If value is found at mid
-        {
-            found = true;
-            position = middle;
-        }
-        else if (array[middle] > value)     // If value is in lower half
-            last = middle - 1;
-        else
-            first = middle + 1;             // If value is in upper half
-        
-    }
-    return position;
-}
 // function prints out an array
 void arrayPrint(){
     string MONTHS[12] = {"January", "February", "March", "April",
@@ -105,9 +79,12 @@ void arrayPrint(){
     
     cout << "Here are the contents of the array: "<< endl;
     for (int index = 0; index < size; index++){
-        cout << numbers[index] << endl;
+        cout << numbers[index] << " ";
     }
+    cout <<endl;
 }
+
+// bubble sort algortihm 
 void swap(int *xp, int *yp){
     int tmp = *xp;
     *xp = *yp;
