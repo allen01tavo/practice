@@ -36,8 +36,10 @@ int main(int argc, const char * argv[]) {
         cout << (results + 1) << endl;
     }
     arrayPrint();
+    cout << "12 is char value: "<< char(130) << endl;
     classObject.Results(tests, SIZE, 82);
     cout << "Value of pie: " << classObject.getPi() << endl;
+    classObject.GuestGame();
     return 0;
 }
 

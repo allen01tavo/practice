@@ -10,17 +10,29 @@
 using namespace std;
 class MyClass{
     
-    public:
-    int myNum;     //  Attribute (int vriable;
+public:
+    int myNum;     //  Attribute (int vriable);
     int binarySearch(int array[], int numelems, int value);
     void printSearch(int rslt);
+    void GuestGame(int lower, int upper);
     void Results(int array[], int numelems, int value);
+    //Constructor
+    MyClass(int x = 0){
+        number = x;};
     const double getPi(){
         return pi;
     }
+    void setNumber(int x){
+        number = x;
+    }
+    // Default of Number is 0
+    int getNumber(){
+        return number;
+    }
     
-    private:
+private:
     const double pi = 3.14; // constant value of pi
+    int number = 0;
     
 };
 
@@ -70,3 +82,36 @@ void MyClass::Results(int array[], int numElems, int value){
     printSearch(rslt);
     
 }
+void MyClass::GuestGame(int lower = 0, int upper = 100){
+    setNumber(20);
+    int guess;
+    int guessCount = 0;
+    do{
+        cout << "Enter a number between " << lower <<" and " << upper <<": ";
+        //request user input
+        cin >> guess;
+        guessCount++;
+        // Checks for input range
+        if (guess < 0 || guess > 100){
+            cout << "Number is out side of the range 0 to 100" << endl;
+        }
+        // breaks while look if guessCount reaches 10
+        if (guessCount == 10){
+            break;
+        }
+        
+    }while(guess != getNumber());
+    
+    if (guess == getNumber()){
+        cout << "You Win! " << endl;
+        cout << "Nubmer of tries: " << guessCount << endl;
+        cout << "Correct Number was: " << getNumber() << endl;
+    }
+    else{
+        cout << "You loose! " << endl;
+        cout << "Number of tries: " << guessCount << endl;
+        cout << "Correct Number was: " << getNumber() << endl;
+    }
+    
+}
+
