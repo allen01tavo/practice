@@ -15,6 +15,7 @@ public:
     // implementation needed
     void letterCount (string str);
     int singleLetterCount(string phrase, char ltr);
+    bool isLetter(char letter);
 private:
     // implementation needed
 protected:
@@ -24,8 +25,10 @@ protected:
 // Function counts and returns the number of letter that are use in a sentence
 void calculator::letterCount (string str){
     int cnt = 0;
+    // loop from a = 97 to z = 122
     for (int i = 97; i <= 122; i++){
         calculator::formatOutput(cnt);
+        // char(i-32) capitazlize letter
         cout << char(i - 32) << ": " <<calculator::singleLetterCount(str, char(i))<< " ";
         cnt++;
     }
@@ -53,6 +56,18 @@ int calculator::singleLetterCount(string str, char ltr){
     }
     return cnt;
 }
+
+// check if the character is a letter
+bool calculator::isLetter(char letter){
+    bool rslt = false;
+    int x = int(letter);
+    // from 65-90 Capital Letters, from 97-122 small letters
+    if((x >= 65 && x <= 90)||(x >= 97 && x <= 122)){
+        rslt = true;
+    }
+    return rslt;
+}
+
 // Linked list
 class Node {
 public:
@@ -61,7 +76,7 @@ public:
 
 };
 // printlinked list class
-class List {
+class nodeFunctions {
 public:
     // Print linked List
     void printList(Node* n, int size = 0){

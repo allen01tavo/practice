@@ -118,7 +118,6 @@ void MyClass::GuessGame(int lower = 0, int upper = 100){
         cout << "Number of tries: " << guessCount << endl;
         cout << "Correct Number was: " << getNumber() << endl;
     }
-    
 }
 
 bool MyClass::IsLetter(char letter){
@@ -139,9 +138,7 @@ int MyClass::LetterCount(string phrase, char ltr){
             cnt++;
         }
     }
-    
     return cnt;
-    
 }
 // returns true if the letter is upper case
 bool MyClass::IsUpperCase(char ltr){
@@ -152,7 +149,7 @@ bool MyClass::IsUpperCase(char ltr){
         }
     }
     else{
-        cout << ltr << " is not a letter" << endl;
+        cout << ltr << " is not a letter." << endl;
     }
     return Ucase;
 }
@@ -168,7 +165,7 @@ char MyClass::ToUpperCase(char ltr){
         }
     }
     else{
-        cout << ltr << " is not a letter" << endl;
+        cout << ltr << " is not a letter." << endl;
     }
     return rslt;
 }
