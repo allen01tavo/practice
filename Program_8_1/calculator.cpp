@@ -11,25 +11,116 @@ using namespace std;
 
 class calculator{
     
-    public:
-        // implementation needed
-        void letterCount (char str[]);
-    private:
-        // implementation needed
+public:
+    // implementation needed
+    void letterCount (string str);
+    int singleLetterCount(string phrase, char ltr);
+private:
+    // implementation needed
+protected:
+    void formatOutput(int n);
         
 };
 // Function counts and returns the number of letter that are use in a sentence
-void letterCount (char str[]){
-    // implementation needed
-    int size = sizeof(str);
-    char endOfLine = '\0';
-    char character = '';
-    char phrase[][]
-    
-    while (character != '\0'){
-        // implementation needed
-        for (int i = 0; i < size; i++){
-            for (int j = 0; i <  )
-        }
+void calculator::letterCount (string str){
+    int cnt = 0;
+    for (int i = 97; i <= 122; i++){
+        calculator::formatOutput(cnt);
+        cout << char(i - 32) << ": " <<calculator::singleLetterCount(str, char(i))<< " ";
+        cnt++;
+    }
+    cout << endl;
+}
+// Function is used to output letterCount
+void calculator::formatOutput(int n){
+    if (n % 5 == 0)
+    {
+        cout << endl;
+    }
+    else
+    {
+        cout << "\t\t";
     }
 }
+// count the number of letters in a sentence
+int calculator::singleLetterCount(string str, char ltr){
+    int cnt = 0;
+
+    for (int i = 0; i < str.length(); i++){
+        if (int(str[i]) == int(ltr) || int(str[i]) == int(toupper(ltr)) || (int(str[i])== (int(ltr) +32))){
+            cnt++;
+        }
+    }
+    return cnt;
+}
+// Linked list
+class Node {
+public:
+    int Value[3] = {};
+    Node * Next;
+
+};
+// printlinked list class
+class List {
+public:
+    // Print linked List
+    void printList(Node* n, int size = 0){
+        while(n!=NULL){
+            if (size > 0){
+                for (int i = 0; i < size; i++){
+                    cout << n->Value[i] << endl;
+                }
+                n = n->Next;
+            }
+            else {
+                cout << n->Value << endl;
+                n = n->Next;
+            }
+        }
+    }
+    void insertAtTheFront(Node**head, int nValue){
+        // 1. Prepare a newNode
+        Node  * newNode = new Node();
+        newNode->Value[0] = nValue;
+        // 2. put it in front of current head
+        newNode->Next = *head;
+        // 3. Move head of the list to point to the new node
+        *head = newNode;
+        
+    }
+    void insertAtTheEnd(Node**head, int nValue){
+        Node * newNode = new Node();
+        newNode->Value[0] = nValue;
+        newNode->Next = NULL;
+        // 2. if linked list is empty, newNode will be a head node
+        if (*head == NULL){
+            *head = newNode;
+            return;
+        }
+        // 3. Find the last node
+        Node * last = *head;
+        while (last->Next != NULL){
+            last = last->Next;
+        }
+        // 4. Insert newNode after last node (at the end)
+        last->Next = newNode;
+    }
+    void insertAfter(Node*previous, int nValue){
+        //1. check if previous node is NULL
+        if(previous == NULL){
+            cout << "Previous cannot be NULL" <<endl;
+            return;
+        }
+        //2. prepare a newNode
+        Node * newNode = new Node();
+        newNode->Value[0] = nValue;
+        //3. Insrt newNode after prevous
+        newNode->Next = previous->Next;
+        previous->Next = newNode;
+    }
+    // returns an specific value stored in the Node array
+    int rtnrValue(Node * n, int location = 0){
+        return n->Value[location];
+    }
+};
+

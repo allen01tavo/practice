@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "MyClass.cpp"
+#include "calculator.cpp"
 using namespace std;
 
 // Function prototype
@@ -14,6 +15,10 @@ int searchList(int list[], int numElems, int value);
 void arrayPrint();
 void swap(int *xp, int *yp);
 void bubblesort(int arr[], int size); // needs some work. It may not work
+void printList(Node* n, int size);
+void insertAtTheFront(Node**head, int nValue);
+void insertAtTheEnd(Node**head, int nValue);
+void insertAfter(Node*previous, int nValue);
 
 const int SIZE = 5;
 
@@ -21,6 +26,23 @@ int main(int argc, const char * argv[]) {
     int tests[SIZE] = {87, 75, 98, 100, 82};
     int results;
     MyClass classObject;        //creates an object of my class
+    calculator objectCalculator; // creates an object of my calculator class
+    Node* head = new Node();
+    Node* second = new Node();
+    Node* third = new Node();
+    
+    head->Value[0] = 1;
+    head->Value[1] = 2;
+    head->Value[2] = 4;
+    head->Next = second;
+    second->Value[0] = 0;
+    second->Value[1] = 6;
+    second->Value[2] = 5;
+    second->Next = third;
+    third->Value[0] = 0;
+    third->Value[1] = 3;
+    third->Value[2] = 5;
+    third->Next = NULL;
     
     // search the array for 100.
     results = searchList(tests, SIZE, 0);
@@ -39,7 +61,28 @@ int main(int argc, const char * argv[]) {
     cout << "12 is char value: "<< char(130) << endl;
     classObject.Results(tests, SIZE, 82);
     cout << "Value of pie: " << classObject.getPi() << endl;
-    classObject.GuestGame();
+    
+    cout << "Ist it a letter?: " << classObject.IsLetter('D') << endl;
+    
+    // Calls out GuessGame
+    classObject.GuessGame();
+    cout << "Is 3 upper case?: " << classObject.IsUpperCase('3') << endl;
+    cout << "Turn a to upper case " << classObject.ToUpperCase('a') << endl;
+    string str = "Me gustan los mAngoAs abcdefg maths dos tres cantozz x v n ii5";
+    cout << " The letter a appers " << classObject.LetterCount(str,'a') << " times in " << "\'" << str << "\'" << endl;
+    
+    objectCalculator.letterCount(str);
+    cout << endl;
+    /**
+    cout << " Printing linked list: " << endl;
+    printList(head,3);
+    insertAtTheFront(&head, -1);
+    printList(head,3);
+    insertAtTheEnd(&head, 10);
+    printList(head,3);
+    insertAfter(second, 100);
+    printList(head,3);
+        **/
     return 0;
 }
 
@@ -83,7 +126,7 @@ void arrayPrint(){
     for (int index = 0; index < size; index++){
         cout << numbers[index] << " ";
     }
-    cout <<endl;
+    cout << endl;
 }
 
 // bubble sort algortihm 
@@ -100,4 +143,58 @@ void bubblesort(int arr[], int size){
                 swap(arr[j], arr[i+1]);
         }
     }
+}
+// Print linked List
+void printList(Node* n, int size = 0){
+    while(n!=NULL){
+        if (size > 0){
+            for (int i = 0; i < size; i++){
+                cout << n->Value[i] << endl;
+            }
+            n = n->Next;
+        }
+        else {
+            cout << n->Value << endl;
+            n = n->Next;
+        }
+    }
+}
+void insertAtTheFront(Node**head, int nValue){
+    // 1. Prepare a newNode
+    Node  * newNode = new Node();
+    newNode->Value[0] = nValue;
+    // 2. put it in front of current head
+    newNode->Next = *head;
+    // 3. Move head of the list to point to the new node
+    *head = newNode;
+}
+void insertAtTheEnd(Node**head, int nValue){
+    Node * newNode = new Node();
+    newNode->Value[0] = nValue;
+    newNode->Next = NULL;
+    // 2. if linked list is empty, newNode will be a head node
+    if (*head == NULL){
+        *head = newNode;
+        return;
+    }
+    // 3. Find the last node
+    Node * last = *head;
+    while (last->Next != NULL){
+        last = last->Next;
+    }
+    // 4. Insert newNode after last node (at the end)
+    last->Next = newNode;
+}
+void insertAfter(Node*previous, int nValue){
+    //1. check if previous node is NULL
+    if(previous == NULL){
+        cout << "Previous cannot be NULL" <<endl;
+        return;
+    }
+    //2. prepare a newNode
+    Node * newNode = new Node();
+    newNode->Value[0] = nValue;
+    //3. Insrt newNode after prevous
+    newNode->Next = previous->Next;
+    previous->Next = newNode;
 }
