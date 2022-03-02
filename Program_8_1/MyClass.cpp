@@ -119,7 +119,7 @@ void MyClass::GuessGame(int lower = 0, int upper = 100){
         cout << "Correct Number was: " << getNumber() << endl;
     }
 }
-
+// Identifies if the character is a letter
 bool MyClass::IsLetter(char letter){
     bool rslt = false;
     int x = int(letter);

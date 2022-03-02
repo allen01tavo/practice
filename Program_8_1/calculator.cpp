@@ -56,7 +56,6 @@ int calculator::singleLetterCount(string str, char ltr){
     }
     return cnt;
 }
-
 // check if the character is a letter
 bool calculator::isLetter(char letter){
     bool rslt = false;
