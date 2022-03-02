@@ -10,4 +10,16 @@
 
 #include <stdio.h>
 
+class Node {
+public:
+    int Value;
+    Node * Next;
+    Node * Previous;
+};
+
+class doubleNodeFunctions{
+public:
+    // implementation needed
+    void printList(Node **n);
+};
 #endif /* DoubleNode_hpp */

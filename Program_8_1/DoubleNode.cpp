@@ -7,18 +7,7 @@
 
 #include "DoubleNode.hpp"
 
-class Node {
-public:
-    int Value;
-    Node * Next;
-    Node * Previous;
-};
 
-class doubleNodeFunctions{
-public:
-    // implementation needed
-    void printList(Node **n);
-};
 void doubleNodeFunctions::printList(Node ** n){
     // implemenation needed
 }

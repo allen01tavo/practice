@@ -68,7 +68,12 @@ int main(int argc, const char * argv[]) {
     classObject.GuessGame();
     cout << "Is 3 upper case?: " << classObject.IsUpperCase('3') << endl;
     cout << "Turn a to upper case " << classObject.ToUpperCase('a') << endl;
-    string str = "Me gustan los mAngoAs abcdefg maths dos tres cantozz x v n ii5";
+    string str = "Alabama, Alaska, Arizona, Arkansas, California, Colorado, Delaware, Florida, Georgia, Hawai, Idaho, "
+                  "Illinois, Indiana, Iowa, kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Minnesota, Mississipi, "
+                  "Montana, Missouri, Nebraska, Nevada, New Hampshire, New Jersy, New Mexico, New York, North Carolina, North Dakota, "
+                  "Ohio, Okahoma, Oregon, Pensilvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermon, "
+                  "Virginia, West Virginia, Washington, West Virginia, Wisconsin, Wyoming";
+    
     cout << " The letter a appers " << classObject.LetterCount(str,'a') << " times in " << "\'" << str << "\'" << endl;
     
     objectCalculator.letterCount(str);
