@@ -9,19 +9,7 @@
 #include <iostream>
 using namespace std;
 
-class calculator{
-    
-public:
-    // implementation needed
-    void letterCount (string str);
-    int singleLetterCount(string phrase, char ltr);
-    bool isLetter(char letter);
-private:
-    // implementation needed
-protected:
-    void formatOutput(int n);
-        
-};
+
 // Function counts and returns the number of letter that are use in a sentence
 void calculator::letterCount (string str){
     int cnt = 0;
@@ -66,14 +54,24 @@ bool calculator::isLetter(char letter){
     }
     return rslt;
 }
+// will count the number of times a word appears in a sentence or paragraph.
+int calculator::wordCount(string str, string word){
+    int cnt = 0;
+    string tmpWord = "";
+    for (int i = 0; i < str.length(); i++){
+        if(calculator::isLetter(str[i])){
+            tmpWord+=str[i];
+        }
+        else{
+            if(tmpWord.compare(word) == 0){
+                cnt++;
+                tmpWord = "";
+            }
+        }
+    }
+    return cnt;
+}
 
-// Linked list
-class Node {
-public:
-    int Value[3] = {};
-    Node * Next;
-
-};
 // printlinked list class
 class nodeFunctions {
 public:
