@@ -78,6 +78,14 @@ int main(int argc, const char * argv[]) {
     
     objectCalculator.letterCount(str);
     cout << endl;
+    
+    string sentence = "The red fox was hunting a rabit when the hunter came and shoot the rabit."
+                      "The red fox ran away and the rabbit ran as well. The hunter missed"
+                      " We all found out that the fox was not a red fox, but a green fox.";
+    string test = "  //// ....";
+    
+    cout<<"The word fox appears " << objectCalculator.wordCount(sentence,"weLl") << " in sentence." << endl;
+    
     /**
     cout << " Printing linked list: " << endl;
     printList(head,3);

@@ -63,15 +63,46 @@ int calculator::wordCount(string str, string word){
             tmpWord+=str[i];
         }
         else{
-            if(tmpWord.compare(word) == 0){
+            string tmp = calculator::toSmallLetters(tmpWord);
+            tmpWord = "";
+            if(tmp.compare(calculator::toSmallLetters(word)) == 0){
                 cnt++;
-                tmpWord = "";
             }
         }
     }
     return cnt;
 }
-
+char calculator::toCapLtr(char ltr){
+    int tmp = 0;
+    if(int(ltr)>= 97 && int(ltr) <=122)
+        tmp =  int(ltr) - 32;
+    if( int(ltr)>= 65 && int(ltr) <= 90)
+        tmp = int(ltr);
+    
+    return char(tmp);
+}
+char calculator::toSmallLtr(char ltr){
+    int tmp = 0;
+    if(int(ltr) >= 97 && int(ltr) <= 122)
+        tmp = int(ltr);
+    if(int(ltr) >= 65 && int(ltr) <= 90)
+        tmp = int(ltr) + 32;
+    return char(tmp);
+}
+string calculator::toSmallLetters(string word){
+    string rsl = "";
+    for(int i = 0; i < word.length(); i++){
+        rsl+=calculator::toSmallLtr(word[i]);
+    }
+    return rsl;
+}
+string calculator::toCapLetters(string word){
+    string rsl = "";
+    for(int i = 0; i < word.length(); i++){
+        rsl+=calculator::toCapLtr(word[i]);
+    }
+    return rsl;
+}
 // printlinked list class
 class nodeFunctions {
 public:

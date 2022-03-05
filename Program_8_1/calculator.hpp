@@ -18,12 +18,15 @@ public:
     int singleLetterCount(string phrase, char ltr);
     bool isLetter(char letter);
     int wordCount(string str, string word);
+    string toSmallLetters(string word);
+    string toCapLetters(string word);
 private:
     // implementation needed
 protected:
+    char toCapLtr(char ltr);
+    char toSmallLtr(char ltr);
     void formatOutput(int n);
     void split(string str, char split);
-        
 };
 
 // Linked list
