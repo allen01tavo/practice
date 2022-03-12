@@ -58,7 +58,7 @@ int main(int argc, const char * argv[]) {
         cout << (results + 1) << endl;
     }
     arrayPrint();
-    cout << "12 is char value: "<< char(130) << endl;
+    cout << "122 is char value: "<< char(122) << endl;
     classObject.Results(tests, SIZE, 82);
     cout << "Value of pie: " << classObject.getPi() << endl;
     
@@ -83,8 +83,9 @@ int main(int argc, const char * argv[]) {
                       "The red fox ran away and the rabbit ran as well. The hunter missed"
                       " We all found out that the fox was not a red fox, but a green fox.";
     string test = "  //// ....";
+    string myWord = "and";
     
-    cout<<"The word fox appears " << objectCalculator.wordCount(sentence,"weLl") << " in sentence." << endl;
+    cout<<"The word '" << myWord << "' appears " << objectCalculator.wordCount(sentence,myWord) << " times in sentence." << endl;
     
     /**
     cout << " Printing linked list: " << endl;

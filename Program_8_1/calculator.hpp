@@ -16,10 +16,11 @@ public:
     // implementation needed
     void letterCount (string str);
     int singleLetterCount(string phrase, char ltr);
-    bool isLetter(char letter);
-    int wordCount(string str, string word);
-    string toSmallLetters(string word);
-    string toCapLetters(string word);
+    bool isLetter(char letter); // identifies if the character is a letter
+    int wordCount(string str, string word); // counts the number of words in a string
+    string toSmallLetters(string word); // convert all letter to small
+    string toCapLetters(string word); // covert all letters to capitals
+    void sortLetters(string word);  // sort letter alpabetically
 private:
     // implementation needed
 protected:

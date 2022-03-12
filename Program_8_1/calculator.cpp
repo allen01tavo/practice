@@ -54,7 +54,7 @@ bool calculator::isLetter(char letter){
     }
     return rslt;
 }
-// will count the number of times a word appears in a sentence or paragraph.
+// it will count the number of times a word appears in a sentence or paragraph.
 int calculator::wordCount(string str, string word){
     int cnt = 0;
     string tmpWord = "";
@@ -72,6 +72,7 @@ int calculator::wordCount(string str, string word){
     }
     return cnt;
 }
+// It capitalize small letters
 char calculator::toCapLtr(char ltr){
     int tmp = 0;
     if(int(ltr)>= 97 && int(ltr) <=122)
@@ -81,6 +82,7 @@ char calculator::toCapLtr(char ltr){
     
     return char(tmp);
 }
+// It converts capital letter into small letters
 char calculator::toSmallLtr(char ltr){
     int tmp = 0;
     if(int(ltr) >= 97 && int(ltr) <= 122)
@@ -89,6 +91,7 @@ char calculator::toSmallLtr(char ltr){
         tmp = int(ltr) + 32;
     return char(tmp);
 }
+// It turns all capital letter in a word small
 string calculator::toSmallLetters(string word){
     string rsl = "";
     for(int i = 0; i < word.length(); i++){
@@ -96,12 +99,17 @@ string calculator::toSmallLetters(string word){
     }
     return rsl;
 }
+// It capitalize all letters in a word
 string calculator::toCapLetters(string word){
     string rsl = "";
     for(int i = 0; i < word.length(); i++){
         rsl+=calculator::toCapLtr(word[i]);
     }
     return rsl;
+}
+// short letters alpabetically
+void calculator::sortLetters(string word){
+    // implementation needed
 }
 // printlinked list class
 class nodeFunctions {
