@@ -20,7 +20,7 @@ public:
     int wordCount(string str, string word); // counts the number of words in a string
     string toSmallLetters(string word); // convert all letter to small
     string toCapLetters(string word); // covert all letters to capitals
-    void sortLetters(string word);  // sort letter alpabetically
+    string sortLetters(string word);  // sort letter alpabetically
 private:
     // implementation needed
 protected:

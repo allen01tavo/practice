@@ -87,6 +87,11 @@ int main(int argc, const char * argv[]) {
     
     cout<<"The word '" << myWord << "' appears " << objectCalculator.wordCount(sentence,myWord) << " times in sentence." << endl;
     
+    string word = "chicken";
+    
+    cout << "Normal Word: " << word << endl;
+    cout << "Sort Word: " << objectCalculator.sortLetters(word) << endl;
+
     /**
     cout << " Printing linked list: " << endl;
     printList(head,3);

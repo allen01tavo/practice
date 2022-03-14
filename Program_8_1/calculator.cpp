@@ -107,10 +107,26 @@ string calculator::toCapLetters(string word){
     }
     return rsl;
 }
-// short letters alpabetically
-void calculator::sortLetters(string word){
+// short letters alpabetically (bubble sort algortihtm is used)
+string calculator::sortLetters(string word){
     // implementation needed
+    int i, j;
+    char tmp;
+    for (i = 0; i < word.length(); i++)
+    {
+        // Last i elements are already in place
+       for (j = i+1; j < word.length(); j++)
+       {
+           if (int(word[j]) < int(word[i])){
+               tmp = word[i];
+               word[i] = word[j];
+               word[j] = tmp;
+           }
+       }
+    }
+    return word;
 }
+
 // printlinked list class
 class nodeFunctions {
 public:
