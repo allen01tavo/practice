@@ -18,9 +18,10 @@ public:
     int singleLetterCount(string phrase, char ltr);
     bool isLetter(char letter); // identifies if the character is a letter
     int wordCount(string str, string word); // counts the number of words in a string
-    string toSmallLetters(string word); // convert all letter to small
-    string toCapLetters(string word); // covert all letters to capitals
-    string sortLetters(string word);  // sort letter alpabetically
+    string toSmallLetters(string word); // converts all letter to small
+    string toCapLetters(string word); // coverts all letters to capitals
+    string sortLetters(string word);  // sorts letters alpabetically
+    string sortWords(string list); // sorts a list of words alpabetically
 private:
     // implementation needed
 protected:
@@ -28,6 +29,7 @@ protected:
     char toSmallLtr(char ltr);
     void formatOutput(int n);
     void split(string str, char split);
+    string wordCompare(string str1, string str2);
 };
 
 // Linked list

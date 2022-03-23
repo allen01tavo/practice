@@ -87,7 +87,7 @@ int main(int argc, const char * argv[]) {
     
     cout<<"The word '" << myWord << "' appears " << objectCalculator.wordCount(sentence,myWord) << " times in sentence." << endl;
     
-    string word = "chicken";
+    string word = "O P Q R S T U M Z";
     
     cout << "Normal Word: " << word << endl;
     cout << "Sort Word: " << objectCalculator.sortLetters(word) << endl;
@@ -148,7 +148,7 @@ void arrayPrint(){
     cout << endl;
 }
 
-// bubble sort algortihm 
+// bubble sort algortihm
 void swap(int *xp, int *yp){
     int tmp = *xp;
     *xp = *yp;
