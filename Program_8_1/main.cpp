@@ -85,13 +85,24 @@ int main(int argc, const char * argv[]) {
     string test = "  //// ....";
     string myWord = "and";
     
-    cout<<"The word '" << myWord << "' appears " << objectCalculator.wordCount(sentence,myWord) << " times in sentence." << endl;
+    cout<<"The word '" << myWord << "' appears " << objectCalculator.wordFind(sentence,myWord) << " times in sentence." << endl;
     
-    string word = "O P Q R S T U M Z";
+    string word = "O P Q C S D U M Z R";
     
     cout << "Normal Word: " << word << endl;
     cout << "Sort Word: " << objectCalculator.sortLetters(word) << endl;
-
+    
+    string rslt = objectCalculator.wordCompareResult("zapaTo", "zapa");
+    cout << "wordcompareResult: "<< rslt << endl;
+    
+    cout << " Word Count " << objectCalculator.wordCount(str) << endl;
+    
+    cout << " Word Sort: " << endl;
+    // To test the wordSort function
+    string cities = "Barranquilla, Barrancabermeja, Atlanta, Barranca, Cartagena, Cartago, Zuluaga, Jakarta, Orlando, Tampa, Yucatan, Mexico, Opal, Mitu, Machupichu, Arauca, Villareal, Orcala, SanAndres, Mico, Caracas, Nasau, Martinique, Quiqui, Dulce, Zulu";
+    // wordSort will sort the words alphabetically
+    cout << objectCalculator.wordSort(cities) << endl;
+    
     /**
     cout << " Printing linked list: " << endl;
     printList(head,3);
