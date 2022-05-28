@@ -267,11 +267,12 @@ string calculator::wordSort(string list){
             }
         }
     }
-    // iterate through the whole aray and compare words
+    // loops through the whole aray and compare words
     for (int i = 0; i < size; i++) {
         // Last i elements are already in place
        for (int j = i+1; j < size; j++)
        {
+           // wordsLessThan return true if word1 is less than word2
            if (calculator::wordsLessThan(word[j], word[i])){
                tmp = word[i];
                word[i] = word[j];

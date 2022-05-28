@@ -99,7 +99,7 @@ int main(int argc, const char * argv[]) {
     
     cout << " Word Sort: " << endl;
     // To test the wordSort function
-    string cities = "Barranquilla, Barrancabermeja, Atlanta, Barranca, Cartagena, Cartago, Zuluaga, Jakarta, Orlando, Tampa, Yucatan, Mexico, Opal, Mitu, Machupichu, Arauca, Villareal, Orcala, SanAndres, Mico, Caracas, Nasau, Martinique, Quiqui, Dulce, Zulu";
+    string cities = "Barranquilla, Barrancabermeja, Atlanta, Barranca, Cartagena, Cartago, Zuluaga, Jakarta, Orlando, Tampa, Yucatan, Mexico, Opal, Mitu, Machupichu, Arauca, Villareal, Orcala, SanAndres, Mico, Caracas, Nasau, Martinique, Quiqui, Dulce, Zulu, Zul, Zambitown, Orcaluma, Personia, Personies, Archietown, Donbie, Quiil, Sandiego, Urugal, Leona, Lion, Laona, Gundaka, Gemma, Xilophonia, Xilo, Weston, Punmp, Ping, Pump";
     // wordSort will sort the words alphabetically
     cout << objectCalculator.wordSort(cities) << endl;
     
